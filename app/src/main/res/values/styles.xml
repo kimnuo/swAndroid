@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/values/styles.xml -->
+<resources>
+
+    <!-- 기본 테마 수정 -->
+    <style name="Theme.AppCompat" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Action Bar를 제거 -->
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>  <!-- 기본 제목 바 비활성화 -->
+    </style>
+
+</resources>
+

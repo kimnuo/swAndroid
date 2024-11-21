@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".ContactFragment">
+
+<androidx.appcompat.widget.Toolbar
+    android:id="@+id/toolbar_contact"
+    android:layout_width="0dp"
+    android:layout_height="50dp"
+    android:background="?attr/colorPrimary"
+    android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:title="연락처 관리"
+    android:titleTextColor="@android:color/white">
+    <TextView
+        android:id="@+id/toolbar_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="연락처 관리"
+        android:textSize="20dp"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@android:color/black"
+        android:layout_centerInParent="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+    </androidx.appcompat.widget.Toolbar>
+    <TextView
+        android:id="@+id/contactListText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="연락처 리스트"
+        android:textSize="18sp"
+        android:textColor="#000000"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_contact"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/contactList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="100dp"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_contact"
+        app:layout_constraintBottom_toTopOf="@id/addContactButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- 연락처 추가 버튼 -->
+    <Button
+        android:id="@+id/addContactButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="연락처 추가"
+        android:layout_gravity="end"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="20dp" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

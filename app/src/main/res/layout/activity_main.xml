@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Toolbar 설정 (액션바) -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:title="Personal Diary"
+        android:background="?android:attr/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Fragment Container -->
+
+
+
+    <!-- GridLayout 설정 -->
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:columnCount="2"
+        android:rowCount="2"
+        android:padding="16dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- 첫 번째 버튼: 연락처 관리 -->
+        <Button
+            android:id="@+id/contactManagementButton"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:text="연락처 관리" />
+
+        <!-- 두 번째 버튼: 인터넷 검색 -->
+        <Button
+            android:id="@+id/internetSearchButton"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:text="인터넷 검색" />
+
+        <!-- 세 번째 버튼: 폰 상태 검색 -->
+        <Button
+            android:id="@+id/phoneStatusButton"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:text="폰 상태 검색" />
+
+        <!-- 네 번째 버튼: 저자 소개 -->
+        <Button
+            android:id="@+id/authorInfoButton"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:text="저자 소개" />
+    </GridLayout>
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" >
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:text="Personal Diary"
+            android:textSize="30dp"
+            android:textColor="@color/black"
+            />
+
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
