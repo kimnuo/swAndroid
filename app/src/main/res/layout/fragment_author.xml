@@ -31,4 +31,19 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true" />
     </androidx.appcompat.widget.Toolbar>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/author_text"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:layout_marginTop="50dp"
+            android:text="작성자 정보가 여기에 표시됩니다."
+            android:textSize="18sp"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/toolbar_author"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

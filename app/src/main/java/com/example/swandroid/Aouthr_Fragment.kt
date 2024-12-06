@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.appcompat.widget.Toolbar
-import android.widget.Toast
+import android.widget.TextView
 import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -31,5 +31,9 @@ class AuthorFragment : Fragment() {
         toolbar.setNavigationOnClickListener {
             requireActivity().supportFragmentManager.popBackStack()  // 뒤로가기 버튼 클릭 시 이전 Fragment로 이동
         }
+
+        // TextView 설정
+        val authorText: TextView = view.findViewById(R.id.author_text)
+        authorText.text = "작성자: 김택준\n생년월일 : 2004.08.18\n출생:경기도 안산"
     }
 }
