@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.appcompat.widget.Toolbar
 import android.widget.Toast
 import android.widget.Button
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -35,6 +37,7 @@ class ContactFragment : Fragment() {
         val addContactButton: Button = view.findViewById(R.id.addContactButton)
         addContactButton.setOnClickListener {
             Toast.makeText(requireContext(), "연락처 추가", Toast.LENGTH_SHORT).show()  // 토스트 메시지 표시
+            replaceFragment(ContactAddFragment())
         }
 
         return view
@@ -49,5 +52,12 @@ class ContactFragment : Fragment() {
         toolbar.setNavigationOnClickListener {
             requireActivity().supportFragmentManager.popBackStack()  // 뒤로가기 버튼 클릭 시 이전 Fragment로 이동
         }
+    }
+    // Fragment 전환을 위한 함수
+    private fun replaceFragment(fragment: Fragment) {
+        requireActivity().supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, fragment) // 적절한 container ID를 사용하여 교체
+            .addToBackStack(null) // 백스택에 추가하여 뒤로가기 기능 활성화
+            .commit()
     }
 }
